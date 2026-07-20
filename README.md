@@ -15,15 +15,15 @@
 
 ## 🧠 Overview
 
-This project implements the complete **digital physical design flow** for an SRAM controller — from RTL description through synthesis, floorplanning, placement, clock tree synthesis, routing, and final GDSII generation — using the industry-standard Cadence digital toolchain (NCLaunch, Genus, Innovus).
+This project implements the complete **digital physical design flow** for an SRAM controller, from RTL description through synthesis, floorplanning, placement, clock tree synthesis, routing, and final GDSII generation using the industry-standard Cadence digital toolchain (NCLaunch, Genus, Innovus).
 
-The goal wasn't just to push a design through the flow, but to **resolve real timing violations along the way** — the project includes a documented case of a setup-timing failure (WNS = ‑0.815 ns) at the placement stage, which was iteratively optimized to timing closure (WNS = +0.008 ns) before proceeding to CTS and routing.
+The goal wasn't just to push a design through the flow, but to **resolve real timing violations along the way** the project includes a documented case of a setup-timing failure (WNS = ‑0.815 ns) at the placement stage, which was iteratively optimized to timing closure (WNS = +0.008 ns) before proceeding to CTS and routing.
 
 ## 🎯 Objectives
 
 - Design and functionally verify an SRAM controller at RTL (Verilog) with a clean FSM structure
 - Synthesize to a gate-level netlist under timing/power/area constraints (Cadence Genus)
-- Execute full physical implementation — floorplan, power plan, place, CTS, route (Cadence Innovus)
+- Execute full physical implementation floorplan, power plan, place, CTS, route (Cadence Innovus)
 - Achieve timing closure (zero violating paths) prior to tape-out-ready GDSII export
 - Produce a DRC/LVS-clean, manufacturable GDSII layout
 
@@ -46,7 +46,7 @@ RTL (Verilog) → Synthesis (Genus) → Floorplan + Power Plan (Innovus)
 | Detailed Routing | NanoRoute (Innovus) | Timing-driven, SI-driven multi-layer routing |
 | Sign-off & GDSII Export | Cadence Innovus | DRC/LVS/timing verification → final GDSII |
 
-## 🧩 RTL Design — SRAM Controller
+## 🧩 RTL Design SRAM Controller
 
 **Module I/O:**
 
@@ -61,7 +61,7 @@ RTL (Verilog) → Synthesis (Genus) → Floorplan + Power Plan (Innovus)
 **FSM States:** `Idle` → `Read` / `Write`, with functional correctness verified via RTL simulation in NCLaunch across all state transitions.
 
 <img src="images/nclaunch_simulation.png" width="600"/>
-<p><sub>RTL simulation waveform — SRAM FSM, NCLaunch</sub></p>
+<p><sub>RTL simulation waveform: SRAM FSM, NCLaunch</sub></p>
 
 ## ⚙️ Synthesis (Cadence Genus)
 
@@ -108,7 +108,7 @@ Standard cells were placed automatically to minimize wirelength and congestion, 
 </details>
 
 <details>
-<summary><b>⏱️ Pre-CTS Timing — Violation Found & Resolved</b></summary>
+<summary><b>⏱️ Pre-CTS Timing Violation Found & Resolved</b></summary>
 <br>
 
 Before CTS, timing analysis surfaced a real setup violation:
