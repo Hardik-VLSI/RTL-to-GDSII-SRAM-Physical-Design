@@ -167,7 +167,7 @@ Final detailed routing was completed with Timing-Driven and SI-Driven options en
 ## 📚 References
 1. Cadence Design Environment Tutorial — ITU.
 2. Kim, D. H., Washington State University. *Innovus Tutorial for EE434*.
-3. Cadence Community Forum — IMPSP-9099 Scan Chain error discussion.
+3. Cadence Community Forum IMPSP-9099 Scan Chain error discussion.
 
 ---
 
