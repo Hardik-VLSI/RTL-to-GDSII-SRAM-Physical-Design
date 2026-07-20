@@ -88,7 +88,7 @@ Chip area and macro placement were defined first, followed by a power distributi
 </details>
 
 <details>
-<summary><b>SRoute — Special Routing</b></summary>
+<summary><b>SRoute Special Routing</b></summary>
 <br>
 
 FollowPin connections were established for accurate pin-aligned routing, vias were generated and cleaned of DRC violations, and initial multi-layer signal routing was completed.
