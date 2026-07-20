@@ -138,7 +138,6 @@ Final detailed routing was completed with Timing-Driven and SI-Driven options en
 - ✅ **Routing overflow:** 0.13% (H), 0.00% (V) negligible congestion
 - ✅ **DRC/LVS clean**, GDSII exported and tape-out ready
   
-<p><sub>Final physical layout, post-route</sub></p>
 
 ## 🧰 Tools
 `Cadence NCLaunch` · `Cadence Genus` · `Cadence Innovus` · `NanoRoute` · `Verilog` · `Tcl`
