@@ -155,7 +155,7 @@ Final detailed routing was completed with Timing-Driven and SI-Driven options en
 
 - ✅ **Timing closure achieved:** WNS improved from ‑0.815 ns → **+0.008 ns**, TNS from ‑31.458 ns → **0.000 ns**, all 136 paths passing
 - ✅ **Zero DRVs** (max cap / max transition / max fanout / max length) at sign-off
-- ✅ **Routing overflow:** 0.13% (H), 0.00% (V) — negligible congestion
+- ✅ **Routing overflow:** 0.13% (H), 0.00% (V) negligible congestion
 - ✅ **DRC/LVS clean**, GDSII exported and tape-out ready
 
 <img src="images/final_layout.png" width="600"/>
