@@ -60,14 +60,12 @@ RTL (Verilog) → Synthesis (Genus) → Floorplan + Power Plan (Innovus)
 
 **FSM States:** `Idle` → `Read` / `Write`, with functional correctness verified via RTL simulation in NCLaunch across all state transitions.
 
-<img src="images/nclaunch_simulation.png" width="600"/>
 <p><sub>RTL simulation waveform: SRAM FSM, NCLaunch</sub></p>
 
 ## ⚙️ Synthesis (Cadence Genus)
 
 The Verilog RTL was synthesized into a gate-level netlist, mapped to standard cells from the target technology library under timing/area/power constraints. Synthesis runs were automated and standardized via a Tcl script (loading RTL, applying constraints, defining the target library) to ensure consistent, repeatable results across design iterations.
 
-<img src="images/genus_schematic.png" width="500"/>
 <p><sub>Synthesized gate-level schematic, Cadence Genus</sub></p>
 
 ## 🏗️ Physical Implementation (Cadence Innovus)
@@ -78,13 +76,6 @@ The Verilog RTL was synthesized into a gate-level netlist, mapped to standard ce
 
 Chip area and macro placement were defined first, followed by a power distribution network (rings, stripes, rails) engineered to minimize IR drop and ensure consistent supply across the design.
 
-<table>
-<tr>
-<td><img src="images/floorplanning.png" width="300"/><br/><sub>Floorplan</sub></td>
-<td><img src="images/power_planning.png" width="300"/><br/><sub>Power Planning</sub></td>
-</tr>
-</table>
-
 </details>
 
 <details>
@@ -92,8 +83,6 @@ Chip area and macro placement were defined first, followed by a power distributi
 <br>
 
 FollowPin connections were established for accurate pin-aligned routing, vias were generated and cleaned of DRC violations, and initial multi-layer signal routing was completed.
-
-<img src="images/after_sroute.png" width="500"/>
 
 </details>
 
@@ -103,7 +92,6 @@ FollowPin connections were established for accurate pin-aligned routing, vias we
 
 Standard cells were placed automatically to minimize wirelength and congestion, followed by targeted timing/area optimization.
 
-<img src="images/placement.png" width="500"/>
 
 </details>
 
@@ -122,12 +110,6 @@ Before CTS, timing analysis surfaced a real setup violation:
 
 Placement and routing were iteratively adjusted to close all 82 violating paths, achieving a clean, positive-slack design before proceeding to clock tree synthesis.
 
-<table>
-<tr>
-<td><img src="images/negative_slack.png" width="350"/><br/><sub>Before: WNS = ‑0.815 ns, 82 violations</sub></td>
-<td><img src="images/after_optimization.png" width="350"/><br/><sub>After: WNS = +0.008 ns, 0 violations</sub></td>
-</tr>
-</table>
 
 </details>
 
@@ -137,7 +119,6 @@ Placement and routing were iteratively adjusted to close all 82 violating paths,
 
 A balanced clock tree was synthesized with automatic buffer/inverter insertion to minimize skew across all sequential elements. Post-CTS timing re-verification confirmed setup/hold integrity was preserved.
 
-<img src="images/clock_tree.png" width="500"/>
 
 </details>
 
@@ -147,7 +128,6 @@ A balanced clock tree was synthesized with automatic buffer/inverter insertion t
 
 Final detailed routing was completed with Timing-Driven and SI-Driven options enabled, followed by post-route timing analysis to confirm setup/hold closure.
 
-<img src="images/nanorouting.png" width="500"/>
 
 </details>
 
@@ -157,8 +137,7 @@ Final detailed routing was completed with Timing-Driven and SI-Driven options en
 - ✅ **Zero DRVs** (max cap / max transition / max fanout / max length) at sign-off
 - ✅ **Routing overflow:** 0.13% (H), 0.00% (V) negligible congestion
 - ✅ **DRC/LVS clean**, GDSII exported and tape-out ready
-
-<img src="images/final_layout.png" width="600"/>
+  
 <p><sub>Final physical layout, post-route</sub></p>
 
 ## 🧰 Tools
