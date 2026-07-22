@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🔲 RTL-to-GDSII Physical Design Flow — SRAM
+# 🔲 RTL-to-GDSII Physical Design Flow - SRAM
 
 **Complete digital physical design implementation: RTL → Synthesis → Place & Route → GDSII**
 
